@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <RelativeLayout
+        android:id="@+id/layout1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/rectangle"
+        android:paddingStart="32dp"
+        android:paddingEnd="32dp"
+        tools:context=".Login">
+
+
+
+
+        <TextView
+            android:id="@+id/textView6"
+            android:layout_width="271dp"
+            android:layout_height="76dp"
+            android:layout_marginTop="48dp"
+            android:gravity="center"
+            android:layout_centerHorizontal="true"
+            android:text="Welcome back!"
+            android:textColor="#1A1824"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            />
+
+        <EditText
+            android:id="@+id/edit_text_email_login"
+            android:layout_width="375dp"
+            android:layout_height="50dp"
+            android:drawableStart="@drawable/email"
+            android:drawablePadding="12dp"
+            android:layout_below="@+id/textView6"
+            android:layout_marginTop="24dp"
+            android:background="@drawable/edite_text_shape"
+            android:ems="10"
+            android:hint="your email address"
+            android:inputType="textEmailAddress"
+            />
+
+        <EditText
+            android:id="@+id/edit_text_password_login"
+            android:layout_width="375dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="20dp"
+            android:layout_below="@+id/edit_text_email_login"
+            android:ems="10"
+            android:drawablePadding="12dp"
+            android:background="@drawable/edite_text_shape"
+            android:hint="your password"
+            android:drawableStart="@drawable/password"
+            android:inputType="textPassword"
+            />
+
+        <TextView
+            android:id="@+id/textView7"
+            android:layout_width="wrap_content"
+            android:layout_height="45dp"
+            android:layout_alignParentEnd="true"
+            android:layout_below="@+id/edit_text_password_login"
+            android:gravity="center"
+            android:onClick="forget"
+            android:textColor="#000000"
+            android:text="forgot password"
+            />
+
+        <Button
+            android:id="@+id/login_btn"
+            android:layout_width="375dp"
+            android:layout_height="wrap_content"
+           android:layout_marginTop="40dp"
+            android:onClick="onClickSignIn"
+            android:background="@drawable/log"
+            android:text="sing_in"
+            android:textAllCaps="false"
+            android:textColor="#FFFFFF"
+            android:textSize="24sp"
+            android:layout_below="@id/textView7"
+            android:layout_centerHorizontal="true"
+            />
+        <TextView
+            android:onClick="dontHaveAccount"
+            android:id="@+id/haveAccount"
+            android:layout_centerInParent="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@id/create_your_profile"
+            android:layout_marginBottom="5dp"
+            android:textSize="20sp"
+            android:textColor="#90FFFFFF"
+            android:text="Don’t have an account?"
+            />
+        <TextView
+            android:id="@+id/create_your_profile"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerInParent="true"
+            android:text="Create your profile"
+            android:textSize="24dp"
+            android:layout_marginBottom="80dp"
+            android:textColor="#ffffff"
+
+            />
+        <ProgressBar
+            android:id="@+id/progress_bar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="?android:progressBarStyleLarge"
+            android:layout_centerInParent="true"
+            android:visibility="gone"
+
+            />
+    </RelativeLayout>
+</ScrollView>

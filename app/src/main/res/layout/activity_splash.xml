@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#7135D8"
+    tools:context=".Splash">
+
+
+    <View
+        android:id="@+id/rectangle"
+        android:layout_width="85dp"
+        android:layout_height="85dp"
+        android:background="@drawable/rectangle"
+        android:elevation="2dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="210dp"
+
+        />
+
+    <View
+        android:id="@+id/oval_2"
+        android:layout_width="87dp"
+        android:layout_height="87dp"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="10dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="-12dp"
+        android:background="@drawable/oval"
+        />
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        android:text="Notebooks"
+        android:textSize="26dp"
+        android:textStyle="normal"
+        android:textColor="#7B1E58"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+
+
+
+
+    <Button
+        android:onClick="OnClickNextInFirstPage"
+        android:id="@+id/btn_next"
+        android:layout_width="99dp"
+        android:layout_height="42dp"
+        android:text="Next"
+        android:background="@drawable/butnext"
+        android:textColor="#7135D8"
+        android:layout_marginEnd="17dp"
+        android:layout_marginBottom="14dp"
+        android:textSize="24dp"
+        android:gravity="center"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+       />
+</RelativeLayout>
