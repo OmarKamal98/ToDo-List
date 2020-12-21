@@ -89,6 +89,7 @@ public class Sign_up extends AppCompatActivity {
 
                         if (!task.isSuccessful()) {
                             Toast.makeText(Sign_up.this, "Registration failed. " + task.getException().getLocalizedMessage(), Toast.LENGTH_SHORT).show();
+                            progressBar2.setVisibility(View.GONE);
                          } else {
                             Toast.makeText(Sign_up.this, "Registration Successful", Toast.LENGTH_LONG).show();
                             startActivity(new Intent(Sign_up.this,Lists.class));

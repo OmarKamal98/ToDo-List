@@ -88,7 +88,7 @@
         <TextView
             android:onClick="dontHaveAccount"
             android:id="@+id/haveAccount"
-            android:layout_centerInParent="true"
+            android:layout_centerHorizontal="true"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_above="@id/create_your_profile"
@@ -102,7 +102,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
-            android:layout_centerInParent="true"
+            android:layout_centerHorizontal="true"
             android:text="Create your profile"
             android:textSize="24dp"
             android:layout_marginBottom="80dp"

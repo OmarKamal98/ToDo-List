@@ -103,11 +103,10 @@
         <TextView
             android:onClick="haveAccount"
             android:id="@+id/haveAccount"
-            android:layout_centerInParent="true"
+            android:layout_centerHorizontal="true"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/sign_up_btn"
-
             android:layout_marginTop="30dp"
             android:textSize="20sp"
             android:text="Already have an Account?"
@@ -119,7 +118,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/haveAccount"
-           android:layout_centerInParent="true"
+           android:layout_centerHorizontal="true"
             android:layout_marginTop="30dp"
             android:textSize="24sp"
             android:text="Login"
