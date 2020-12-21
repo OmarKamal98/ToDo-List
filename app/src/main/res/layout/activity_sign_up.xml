@@ -16,7 +16,7 @@
         android:background="@drawable/rectangle"
         android:paddingLeft="32dp"
         android:paddingRight="32dp"
-        tools:context=".activities.Sign_up">
+        tools:context=".Sign_up">
 
 
         <TextView
@@ -86,6 +86,7 @@
 
 
         <Button
+
             android:id="@+id/sign_up_btn"
             android:layout_width="375dp"
             android:layout_height="52dp"

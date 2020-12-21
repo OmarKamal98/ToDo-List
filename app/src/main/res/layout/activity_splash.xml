@@ -7,40 +7,29 @@
     android:background="#7135D8"
     tools:context=".Splash">
 
-
-    <View
-        android:id="@+id/rectangle"
-        android:layout_width="85dp"
-        android:layout_height="85dp"
-        android:background="@drawable/rectangle"
-        android:elevation="2dp"
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/aaaaaaaa"
+        android:layout_above="@+id/textView"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="210dp"
+        android:layout_marginBottom="25dp"
+        android:background="@drawable/rectangle"
 
-        />
+    />
 
-    <View
-        android:id="@+id/oval_2"
-        android:layout_width="87dp"
-        android:layout_height="87dp"
-        android:layout_alignParentLeft="true"
-        android:layout_marginLeft="10dp"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="-12dp"
-        android:background="@drawable/oval"
-        />
+
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="60dp"
-        android:text="Notebooks"
+
+        android:text="Things To Do"
         android:textSize="26dp"
         android:textStyle="normal"
-        android:textColor="#7B1E58"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+        android:textColor="#FFFFFF"
+         android:layout_centerInParent="true"
+         />
 
 
 
