@@ -15,4 +15,7 @@ public class ViewTask extends AppCompatActivity {
 
     public void backtotask(View view) {
     }
+
+    public void deleteTask(View view) {
+    }
 }

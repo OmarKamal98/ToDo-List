@@ -114,6 +114,17 @@
                 android:translationY="-2.47sp"
                 android:gravity="top"
                 />
+            <TextView
+                android:onClick="deleteTask"
+                android:id="@+id/deletetask"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Delete"
+                android:textSize="32sp"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="24dp"
+                android:layout_marginBottom="32dp"
+                />
         </RelativeLayout>
 
 
