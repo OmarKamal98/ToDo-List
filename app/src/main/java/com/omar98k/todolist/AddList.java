@@ -2,6 +2,7 @@ package com.omar98k.todolist;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
@@ -14,6 +15,8 @@ public class AddList extends AppCompatActivity {
     }
 
     public void OnClickCancle(View view) {
+        Intent intent=new Intent(AddList.this,Lists.class);
+        startActivity(intent);
         finish();
     }
 
