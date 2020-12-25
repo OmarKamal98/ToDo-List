@@ -14,6 +14,8 @@ public class Lists extends AppCompatActivity {
         setContentView(R.layout.activity_lists);
     }
 
+
+
     public void back(View view) {
         Intent intent=new Intent(Lists.this,Login.class);
         startActivity(intent);
@@ -21,7 +23,9 @@ public class Lists extends AppCompatActivity {
     }
 
     public void OnClickCreateNewList(View view) {
-
+    Intent intent=new Intent(Lists.this,AddList.class);
+    startActivity(intent);
+    finish();
     }
 
     public void logout(View view) {
