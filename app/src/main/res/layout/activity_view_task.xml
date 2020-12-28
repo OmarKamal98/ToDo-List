@@ -47,7 +47,7 @@
             android:layout_below="@+id/edit_task"
             android:background="@drawable/taskview">
         <TextView
-            android:id="@+id/meet_joseph"
+            android:id="@+id/taskNamev"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="32sp"
@@ -63,7 +63,7 @@
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
             android:layout_marginLeft="20dp"
-            android:layout_below="@id/meet_joseph"
+            android:layout_below="@id/taskNamev"
             android:layout_marginTop="20dp"
             android:textSize="24sp"
             android:text="October_201"
@@ -99,7 +99,7 @@
                 android:alpha="0.14"
                 />
             <TextView
-                android:id="@+id/have_to_mee"
+                android:id="@+id/contexTask"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentStart="true"

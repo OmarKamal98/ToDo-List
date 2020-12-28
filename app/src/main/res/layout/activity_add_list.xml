@@ -39,7 +39,7 @@
 
 
     <EditText
-        android:id="@+id/edit_text_email_login"
+        android:id="@+id/edit_text_name_of_list"
         android:layout_width="375dp"
         android:layout_height="50dp"
          android:gravity="center"
