@@ -6,27 +6,27 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class TaskClass {
-    public String noteBookId="public";
-    public String idOfNote;
+    public String ListsId="public";
+    public String idOfTask;
     public String titleOfNote;
     public String contextOfNote;
     public long dateOfNote;
     public TaskClass(){}
     public TaskClass(String noteBookId,String idOfNote, String titleOfNote, String contextOfNote, long dateOfNote) {
-        this.idOfNote = idOfNote;
-        this.noteBookId=noteBookId;
+        this.idOfTask = idOfNote;
+        this.ListsId=noteBookId;
         this.titleOfNote = titleOfNote;
         this.contextOfNote = contextOfNote;
         this.dateOfNote = dateOfNote;
     }
     public TaskClass(String noteBookId,String idOfNote) {
-        this.idOfNote = idOfNote;
-        this.noteBookId=noteBookId;
+        this.idOfTask = idOfNote;
+        this.ListsId=noteBookId;
 
     }
 
     public static String generateNoteID(){
-        return FirebaseDatabase.getInstance().getReference().child("user").child("note").push().getKey();
+        return FirebaseDatabase.getInstance().getReference().child("user").child("Task").push().getKey();
 
     }
 
@@ -37,7 +37,7 @@ public class TaskClass {
         return dateText;
     }
     public String getidTask( ){
-        return  idOfNote ;
+        return  idOfTask ;
     }
     // id getter and setter
 }

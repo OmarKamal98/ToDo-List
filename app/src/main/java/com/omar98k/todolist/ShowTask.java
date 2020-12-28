@@ -57,21 +57,21 @@ public class ShowTask extends AppCompatActivity {
         Log.d("FIREBASE", "Writing notebook");
         String userId =FirebaseAuth.getInstance().getUid();
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-        mDatabase.child("User").child(userId).child("Note").child(task.idOfNote).setValue(task);
+        mDatabase.child("User").child(userId).child("Task").child(task.idOfTask).setValue(task);
         notes.add(task);
 
     }
 
     //get notes from the fireBase database
     public static void initNoteData() {
-        FirebaseDatabase.getInstance().getReference().child("User").child(FirebaseAuth.getInstance().getUid()).child("Note")
+        FirebaseDatabase.getInstance().getReference().child("User").child(FirebaseAuth.getInstance().getUid()).child("Task")
                 .addValueEventListener(valueEventListener=new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                         notes.clear();
                         for(DataSnapshot snapshot: dataSnapshot.getChildren() ){
                             TaskClass note = snapshot.getValue(TaskClass.class);
-                            if (note.noteBookId.equals(currentNotebookId)) {
+                            if (note.ListsId.equals(currentNotebookId)) {
                                 notes.add(note);
                             }
                             else if (currentNotebookId.equals("non")) {

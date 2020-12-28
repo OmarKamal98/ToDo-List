@@ -62,7 +62,8 @@ public class Lists extends AppCompatActivity {
         bookAdapter.setOnItemClickListener(new AllListsAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(int position) {
-
+               String id1=books.get(position).id;
+                currentNotebookId=id1;
                 startActivity(new Intent(Lists.this,ShowTask.class));
                 finish();
             }
@@ -70,7 +71,7 @@ public class Lists extends AppCompatActivity {
     }
     //get Lists from the fireBase database
     public static void initListData() {
-        FirebaseDatabase.getInstance().getReference().child("User").child(FirebaseAuth.getInstance().getUid()).child("NoteBook")
+        FirebaseDatabase.getInstance().getReference().child("User").child(FirebaseAuth.getInstance().getUid()).child("Lists")
                 .addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -91,7 +92,7 @@ public class Lists extends AppCompatActivity {
     public static void writeNotebook(ListClass list) {
         Log.d("FIREBASE", "Writing notebook");
         String userId =FirebaseAuth.getInstance().getUid();
-        mDatabase.child("User").child(userId).child("NoteBook").child(list.name).setValue(list);
+        mDatabase.child("User").child(userId).child("Lists").child(list.name).setValue(list);
     }
 
 
