@@ -15,6 +15,9 @@ import com.omar98k.todolist.classes.ListClass;
 
 import java.util.ArrayList;
 
+import static com.omar98k.todolist.Lists.currentNotebookId;
+import static com.omar98k.todolist.ShowTask.notes;
+
 public class horizontalAdapter  extends RecyclerView.Adapter<horizontalAdapter.ViewHolder> {
 
     private ArrayList<ListClass> data;
@@ -42,6 +45,19 @@ public class horizontalAdapter  extends RecyclerView.Adapter<horizontalAdapter.V
     public void onBindViewHolder(ViewHolder holder, int position) {
        holder.bookName.setText(data.get(position).name);
 
+        for (int ii=0;ii < getItemCount();ii++) {
+            String id11=data.get(ii).id;
+            currentNotebookId=id11;
+            int a=0;
+            for (int i = 0; i < notes.size(); i++) {
+                if (notes.get(i).ListsId.equals(currentNotebookId)) {
+                    a++;
+                }
+            }
+
+            holder.noOfTask.setText(a +"Task");
+        }
+
     }
 
     @Override
@@ -51,13 +67,14 @@ public class horizontalAdapter  extends RecyclerView.Adapter<horizontalAdapter.V
 
     public class ViewHolder extends RecyclerView.ViewHolder {
 
-        public ImageView bookImage;
-        public TextView bookName;
+
+        public TextView bookName,noOfTask;
 
         public ViewHolder(View itemView) {
             super(itemView);
 
             bookName=itemView.findViewById(R.id.note_title);
+            noOfTask=itemView.findViewById(R.id.numberOfTask);
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {

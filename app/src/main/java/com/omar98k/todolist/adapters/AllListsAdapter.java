@@ -9,12 +9,20 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.omar98k.todolist.R;
 import com.omar98k.todolist.classes.ListClass;
+import com.omar98k.todolist.classes.TaskClass;
 
 import java.util.ArrayList;
+
+
+import static com.omar98k.todolist.Lists.books;
+import static com.omar98k.todolist.Lists.currentNotebookId;
+import static com.omar98k.todolist.ShowTask.notes;
 
 public class AllListsAdapter extends RecyclerView.Adapter<AllListsAdapter.ViewHolder>  {
 
     private ArrayList<ListClass> data;
+
+
     private OnItemClickListener mListener;
     public AllListsAdapter(ArrayList<ListClass> data){
         this.data = data;
@@ -39,7 +47,23 @@ public class AllListsAdapter extends RecyclerView.Adapter<AllListsAdapter.ViewHo
 
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
+
         holder.bookName.setText(data.get(position).name);
+
+        int a=0;
+
+        for(int ii=0;ii < getItemCount();ii++){
+
+            String id11=books.get(ii).id;
+            currentNotebookId=id11;
+
+            for (int i = 0; i < notes.size(); i++) {
+                if (notes.get(i).ListsId.equals(currentNotebookId)) {
+                    a=a+1;
+                }
+            }
+            holder.noOfTask.setText(a +" Task");
+        }
 
     }
 
@@ -47,7 +71,10 @@ public class AllListsAdapter extends RecyclerView.Adapter<AllListsAdapter.ViewHo
     public int getItemCount() {
         return data.size();
     }
-    public void filterList(ArrayList<ListClass> filteredList) {
+
+
+
+    public   void filterList(ArrayList<ListClass> filteredList) {
         data = filteredList;
         notifyDataSetChanged();
     }
@@ -55,11 +82,13 @@ public class AllListsAdapter extends RecyclerView.Adapter<AllListsAdapter.ViewHo
 
 
         public TextView bookName;
+        public TextView noOfTask;
 
         public ViewHolder(View itemView) {
             super(itemView);
 
             bookName=itemView.findViewById(R.id.name_List);
+            noOfTask=itemView.findViewById(R.id.numberOfTask);
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {

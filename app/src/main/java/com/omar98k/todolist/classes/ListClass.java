@@ -6,7 +6,7 @@ import com.google.firebase.database.FirebaseDatabase;
 public class ListClass {
     public String id;
     public String name;
-    public int imageIcon;
+
 
     public ListClass(){
 

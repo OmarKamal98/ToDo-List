@@ -14,7 +14,7 @@ import java.util.ArrayList;
 
 public class TasksAdapter extends RecyclerView.Adapter<TasksAdapter.ViewHolder> {
 
-    private ArrayList<TaskClass> data;
+    public ArrayList<TaskClass> data;
     private AllListsAdapter.OnItemClickListener mListener;
     public TasksAdapter(ArrayList<TaskClass> data){
         this.data = data;

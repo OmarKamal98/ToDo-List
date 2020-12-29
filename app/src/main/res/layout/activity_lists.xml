@@ -46,7 +46,7 @@
 
 
     <EditText
-        android:id="@+id/search_edit_text"
+        android:id="@+id/search_edit_text1"
         android:layout_width="match_parent"
         android:layout_height="36dp"
         android:layout_marginHorizontal="16dp"
@@ -68,7 +68,7 @@
         android:text="Lists:"
         android:textSize="20sp"
         android:textColor="#FFFFFF"
-        android:layout_below="@+id/search_edit_text"
+        android:layout_below="@+id/search_edit_text1"
         android:layout_marginTop="50dp"
         android:layout_marginLeft="18dp"
         />
