@@ -30,6 +30,7 @@
         android:layout_centerHorizontal="true"
         />
        <TextView
+           android:onClick="editeTask"
            android:id="@+id/edit_task"
            android:layout_width="55dp"
            android:layout_height="46dp"
@@ -46,7 +47,7 @@
             android:layout_height="match_parent"
             android:layout_below="@+id/edit_task"
             android:background="@drawable/taskview">
-        <TextView
+        <EditText
             android:id="@+id/taskNamev"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -98,7 +99,7 @@
                 android:gravity="top"
                 android:alpha="0.14"
                 />
-            <TextView
+            <EditText
                 android:id="@+id/contexTask"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

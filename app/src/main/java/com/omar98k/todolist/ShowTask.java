@@ -12,6 +12,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -22,6 +23,8 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.omar98k.todolist.adapters.AllListsAdapter;
+import com.omar98k.todolist.adapters.AllTasksAdapter;
 import com.omar98k.todolist.adapters.TasksAdapter;
 import com.omar98k.todolist.classes.ListClass;
 import com.omar98k.todolist.classes.TaskClass;
@@ -38,7 +41,7 @@ public class ShowTask extends AppCompatActivity {
     TextView nameListt;
     //note tools
     private RecyclerView noteRecyclerView;
-    static TasksAdapter noteAdapter;
+    static AllTasksAdapter noteAdapter;
     private RecyclerView.LayoutManager noteLayoutManager;
     public static ArrayList<TaskClass> notes=new ArrayList<>();
     @Override
@@ -49,15 +52,32 @@ public class ShowTask extends AppCompatActivity {
         nameListt.setText(nameOfList);
         //Initialize Realtime Reference.
         mDatabase = FirebaseDatabase.getInstance().getReference();
+        //notes data
+        initNoteData();
+
         //recycler of notes
         noteRecyclerView = (RecyclerView) findViewById(R.id.note_recycler_view);
         noteRecyclerView.setHasFixedSize(true);
         noteLayoutManager = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
         noteRecyclerView.setLayoutManager(noteLayoutManager);
-        noteAdapter = new TasksAdapter(notes);
+        noteAdapter = new AllTasksAdapter(notes);
         noteRecyclerView.setAdapter(noteAdapter);
-        //notes data
-        initNoteData();
+
+
+        noteAdapter.setOnItemClickListener(new AllListsAdapter.OnItemClickListener() {
+            @Override
+            public void onItemClick(  int position ) {
+
+                Intent intent = new Intent(ShowTask.this,ViewTask.class);
+                intent.putExtra("task name", notes.get(position).titleOfNote);
+                intent.putExtra("task context", notes.get(position).contextOfNote);
+                intent.putExtra("task date", notes.get(position).dateOfNote);
+                intent.putExtra("task position", position);
+                startActivity(intent);
+                finish();
+            }
+        });
+
     }
 
     //add note in firebase database
@@ -107,9 +127,7 @@ public class ShowTask extends AppCompatActivity {
 
     public void delete(View view) {
 
-
-            int a=0;
-            final ListClass list=new ListClass(Lists.currentNotebookId, nameOfList);
+            final ListClass list=new ListClass(currentNotebookId, nameOfList);
             AlertDialog alertDialog = new AlertDialog.Builder(ShowTask.this)
 //set icon
                     .setIcon(android.R.drawable.ic_dialog_alert)
@@ -126,7 +144,7 @@ public class ShowTask extends AppCompatActivity {
                             mDatabase= FirebaseDatabase.getInstance().getReference().child("User").child(userId).child("Lists").child(list.getName());
                             mDatabase.removeValue();
 
-                            TaskClass task=new TaskClass(Lists.currentNotebookId,ShowTask.notes.get(getIntent().getIntExtra("task position",0)).idOfTask);
+                            TaskClass task=new TaskClass(currentNotebookId,ShowTask.notes.get(getIntent().getIntExtra("task position",0)).idOfTask);
                             mDatabase=FirebaseDatabase.getInstance().getReference().child("User").child(userId).child("Task").child(task.idOfTask);
                             mDatabase.removeValue();
 

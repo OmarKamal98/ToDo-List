@@ -21,7 +21,9 @@ public class TasksAdapter extends RecyclerView.Adapter<TasksAdapter.ViewHolder> 
     }
 
 
-
+    public void setOnItemClickListener(AllListsAdapter.OnItemClickListener listener){
+        mListener=listener;
+    }
 
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {

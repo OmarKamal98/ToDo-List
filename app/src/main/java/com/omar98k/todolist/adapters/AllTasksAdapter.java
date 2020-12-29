@@ -42,9 +42,9 @@ public class AllTasksAdapter  extends RecyclerView.Adapter<AllTasksAdapter.ViewH
 
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
-        holder.noteTitle.setText(data.get(position).titleOfNote);
-        holder.noteContext.setText(data.get(position).contextOfNote);
-
+        holder.taskTitle.setText(data.get(position).titleOfNote);
+        holder.taskContext.setText(data.get(position).contextOfNote);
+        holder.taskDate.setText(TaskClass.longToDate(data.get(position).dateOfNote));
     }
 
     @Override
@@ -58,12 +58,12 @@ public class AllTasksAdapter  extends RecyclerView.Adapter<AllTasksAdapter.ViewH
 
     public class ViewHolder extends RecyclerView.ViewHolder {
 
-        public TextView noteTitle,noteContext,noteDate;
+        public TextView taskTitle,taskContext,taskDate;
         public ViewHolder(View itemView) {
             super(itemView);
-            noteTitle=itemView.findViewById(R.id.note_title);
-            noteContext=itemView.findViewById(R.id.note_context);
-            noteDate=itemView.findViewById(R.id.note_date);
+            taskTitle=itemView.findViewById(R.id.note_title);
+            taskContext=itemView.findViewById(R.id.note_context);
+            taskDate=itemView.findViewById(R.id.note_date);
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
