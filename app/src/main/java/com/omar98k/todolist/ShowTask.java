@@ -144,10 +144,6 @@ public class ShowTask extends AppCompatActivity {
                             mDatabase= FirebaseDatabase.getInstance().getReference().child("User").child(userId).child("Lists").child(list.getName());
                             mDatabase.removeValue();
 
-                            TaskClass task=new TaskClass(currentNotebookId,ShowTask.notes.get(getIntent().getIntExtra("task position",0)).idOfTask);
-                            mDatabase=FirebaseDatabase.getInstance().getReference().child("User").child(userId).child("Task").child(task.idOfTask);
-                            mDatabase.removeValue();
-
                             Intent intent=new Intent(ShowTask.this,Lists.class);
                             startActivity(intent);
                             finish();

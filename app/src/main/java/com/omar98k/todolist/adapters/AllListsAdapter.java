@@ -14,7 +14,6 @@ import com.omar98k.todolist.classes.TaskClass;
 import java.util.ArrayList;
 
 
-import static com.omar98k.todolist.Lists.books;
 import static com.omar98k.todolist.Lists.currentNotebookId;
 import static com.omar98k.todolist.ShowTask.notes;
 
@@ -50,18 +49,19 @@ public class AllListsAdapter extends RecyclerView.Adapter<AllListsAdapter.ViewHo
 
         holder.bookName.setText(data.get(position).name);
 
-        int a=0;
+
 
         for(int ii=0;ii < getItemCount();ii++){
-
-            String id11=books.get(ii).id;
+            String id11=data.get(position).id;
             currentNotebookId=id11;
 
+            int a=0;
             for (int i = 0; i < notes.size(); i++) {
-                if (notes.get(i).ListsId.equals(currentNotebookId)) {
+                if (notes.get(position).ListsId.equals(currentNotebookId)) {
                     a=a+1;
                 }
             }
+
             holder.noOfTask.setText(a +" Task");
         }
 
