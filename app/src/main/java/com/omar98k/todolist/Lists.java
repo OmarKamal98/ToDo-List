@@ -1,10 +1,12 @@
 package com.omar98k.todolist;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -14,6 +16,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -148,10 +151,32 @@ public class Lists extends AppCompatActivity {
 
 
     public void back(View view) {
-        FirebaseAuth.getInstance().signOut();
-        Intent intent=new Intent(Lists.this,Login.class);
-        startActivity(intent);
-        finish();
+        AlertDialog alertDialog = new AlertDialog.Builder(Lists.this)
+//set icon
+                .setIcon(android.R.drawable.ic_dialog_alert)
+//set title
+                .setTitle("logout")
+//set message
+                .setMessage("Log out of ToDo List ")
+//set positive button
+                .setPositiveButton("yes", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        FirebaseAuth.getInstance().signOut();
+                        Intent intent=new Intent(Lists.this,Login.class);
+                        startActivity(intent);
+                        finish();
+
+                    }
+                })
+//set negative button
+                .setNegativeButton("no", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+
+                    }
+                })
+                .show();
     }
 
     public void OnClickCreateNewList(View view) {
@@ -161,9 +186,31 @@ public class Lists extends AppCompatActivity {
     }
 
     public void logout(View view) {
-        FirebaseAuth.getInstance().signOut();
-        Intent intent=new Intent(Lists.this,Login.class);
-        startActivity(intent);
-        finish();
+        AlertDialog alertDialog = new AlertDialog.Builder(Lists.this)
+//set icon
+                .setIcon(android.R.drawable.ic_dialog_alert)
+//set title
+                .setTitle("logout")
+//set message
+                .setMessage("Log out of ToDo List ")
+//set positive button
+                .setPositiveButton("yes", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        FirebaseAuth.getInstance().signOut();
+                        Intent intent=new Intent(Lists.this,Login.class);
+                        startActivity(intent);
+                        finish();
+
+                    }
+                })
+//set negative button
+                .setNegativeButton("no", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+
+                    }
+                })
+                .show();
     }
 }
