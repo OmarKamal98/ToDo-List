@@ -11,6 +11,8 @@
         android:theme="@style/AppTheme">
         <activity android:name=".AddList"></activity>
         <activity android:name=".AddTask" />
+        <activity android:name=".Forgot_password" />
+        <activity android:name=".Confirmation_message" />
         <activity android:name=".ViewTask" />
         <activity android:name=".ShowTask" />
         <activity android:name=".Lists" />

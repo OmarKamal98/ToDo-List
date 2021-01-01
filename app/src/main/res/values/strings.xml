@@ -10,5 +10,6 @@
     <string name="invalid_password">Password must be >5 characters</string>
     <string name="login_failed">"Login failed"</string>
     <string name="this_is_an_example_of_a_note_text_just_to_fill_some_lines_and_it_will_be_as_a_description_of_the_note">this is an example of a note text just to fill some lines and it will be as a description of the note</string>
+    <string name="checkemail">We’ve sent instructions on how to reset\nThe password (also check the Spam folder).</string>
 
 </resources>
